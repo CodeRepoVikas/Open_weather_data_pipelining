@@ -32,4 +32,27 @@ Python Programing, Apache Airflow, AWS-EC2, AWS-S3, Visual-Studio
  1) Create a new S3 bucket.
  2) Add an IAM role( AmaxonEC2FullAccess & AmazonS3FullAccess) attached to the instance so that the instance can dump the file in the S3 bucket created above.
 ## Creating the python code:
-1) 
+1) Generate a free API from the host.  https://openweathermap.org/api
+2) import the important libraries.
+3) define the default arguments for the dag.  
+4) create a user-defined function that will process the fetched data from the json format and convert it into the dataframe. After converting into dataframe the data needs to be dumped in the S3 file path.
+5) create a task that will test whether the API  is responding or not using HttpSensor.
+6) One task that will GET the data from the website using SimpleHttpOperator.
+7) We will include one more task that will call the function using PythonOperator created at the step for performing ETL to the data.
+8) also we will mention the tasks position and how they will run in the airflow here.
+
+## Setting the airflow:
+1) Open the airflow in the browser.
+2) create a new connection that will help us to test the data from or fetch the data from the OpenWeatherMap website.
+3) In connection id mention the http_conn_id you name in the python file for the task, in connection_type mention 'HTTP' and in host write the domain name of url i.e https://api.openweathermap.org. Save the file.
+4) Refresh the Dag, You will see the new conn that you have created.
+5) now open the dag and you will see the tasks are aligned as you have mentioned in the python file.
+6) Run the dag, you can see the status for each task if it is green that means your dag ran successfully also check the file in the S3 bucket.
+7) If there is any chance the dag has failed, check the log for the failed task.
+
+## Reference:
+A big thanks to Tuplespectra for such a good explanation.
+https://www.youtube.com/watch?v=uhQ54Dgp6To
+https://www.youtube.com/watch?v=0_caTDCZnd0
+https://www.youtube.com/watch?v=sQQjMnEkGjs
+
