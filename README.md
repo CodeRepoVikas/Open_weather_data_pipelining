@@ -28,10 +28,10 @@ Python Programing, Apache Airflow, AWS-EC2, AWS-S3, Visual-Studio
 3) Now after running the below commands and copying the public ipv4 DNS and paste it in the browser search bar and add ':8080/home' at the end of the url.
 4)  After providing the credentials, you can see Apache airflow running on your instance.
 
- ## setting the S3 Bucket.
+## Step 3: Set up the S3 Bucket.
  1) Create a new S3 bucket.
  2) Add an IAM role( AmaxonEC2FullAccess & AmazonS3FullAccess) attached to the instance so that the instance can dump the file in the S3 bucket created above.
-## Creating the python code:
+## Step 4: Creating the python code:
 1) Generate a free API from the host.  https://openweathermap.org/api
 2) import the important libraries.
 3) define the default arguments for the dag.  
@@ -41,7 +41,7 @@ Python Programing, Apache Airflow, AWS-EC2, AWS-S3, Visual-Studio
 7) We will include one more task that will call the function using PythonOperator created at the step for performing ETL to the data.
 8) also we will mention the tasks position and how they will run in the airflow here.
 
-## Setting the airflow:
+## Step 5: Setting up the Airflow:
 1) Open the airflow in the browser.
 2) create a new connection that will help us to test the data from or fetch the data from the OpenWeatherMap website.
 3) In connection id mention the http_conn_id you name in the python file for the task, in connection_type mention 'HTTP' and in host write the domain name of url i.e https://api.openweathermap.org. Save the file.
