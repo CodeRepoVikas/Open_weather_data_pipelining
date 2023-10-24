@@ -3,6 +3,9 @@ To set up an automated job that will fetch the data from www.openweathermap.org 
 o/p Data Format: 
 datetime | min_temp | max_temp | climate | climate_desc | windspeed | humidity
 
+![image](https://github.com/CodeRepoVikas/Open_weather_data_pipelining/assets/97329766/c7e83788-638c-4f70-8c2e-cda136098d46)
+
+
 ## Tools & Requirements:
 Python Programing, Apache Airflow, AWS-EC2, AWS-S3, Visual-Studio
 
@@ -49,6 +52,16 @@ Python Programing, Apache Airflow, AWS-EC2, AWS-S3, Visual-Studio
 5) now open the dag and you will see the tasks are aligned as you have mentioned in the python file.
 6) Run the dag, you can see the status for each task if it is green that means your dag ran successfully also check the file in the S3 bucket.
 7) If there is any chance the dag has failed, check the log for the failed task.
+
+   All the 3 tasks run successfully in Airflow
+![image](https://github.com/CodeRepoVikas/Open_weather_data_pipelining/assets/97329766/2702b546-6b3c-469c-bd6a-0f5139be6459)
+
+Output S3 bucket contains 2 data files
+![image](https://github.com/CodeRepoVikas/Open_weather_data_pipelining/assets/97329766/f05ad26f-845c-41f4-a759-601eff9340f7)
+
+Output file data example:
+![image](https://github.com/CodeRepoVikas/Open_weather_data_pipelining/assets/97329766/4795f1fa-a854-44e0-9838-d89774019c72)
+
 
 ## Reference:
 A big thanks to Tuplespectra for such a good explanation.
